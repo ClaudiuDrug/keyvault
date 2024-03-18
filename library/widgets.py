@@ -277,6 +277,7 @@ class KeyVault(SharedState):
 
         # layout:
         self.root.title("KeyVault")
+        self.root.geometry("560x320")
         self.root.configure(background="white")
         self.root.rowconfigure(0, weight=1)
         self.root.columnconfigure(0, weight=1)
@@ -297,6 +298,13 @@ class KeyVault(SharedState):
         NotificationFrame(main_frame)
 
         self.set_tree(self.cache)
+        self.set_size((560, 800), (320, 480))
+
+    def set_size(self, width: Tuple[int, int], height: Tuple[int, int]):
+        min_width, max_width = width
+        min_height, max_height = height
+        self.root.minsize(min_width, min_height)
+        self.root.maxsize(max_width, max_height)
 
 
 class TreeFrame(SharedState):
@@ -467,6 +475,8 @@ class ClearFrame(SharedState):
         """Clear all entries in the account section"""
         del self.service, self.username, self.password
         self.show_info("Cleared all entries!")
+
+        print(self.root.winfo_width(), self.root.winfo_height())
 
 
 class ToolboxFrame(SharedState):
