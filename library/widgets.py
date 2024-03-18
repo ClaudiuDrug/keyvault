@@ -476,8 +476,6 @@ class ClearFrame(SharedState):
         del self.service, self.username, self.password
         self.show_info("Cleared all entries!")
 
-        print(self.root.winfo_width(), self.root.winfo_height())
-
 
 class ToolboxFrame(SharedState):
 
