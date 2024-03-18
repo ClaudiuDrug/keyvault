@@ -1,2 +1,3 @@
 # keyvault
-Simple GUI interface for the keyring library.
+
+Simple GUI interface for the `keyring` library.
